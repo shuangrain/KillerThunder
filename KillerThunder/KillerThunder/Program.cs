@@ -16,7 +16,14 @@ namespace KillerThunder
 
         static void Main(string[] args)
         {
-            int sec = 60 * 10;
+            int sec = 0;
+            Console.WriteLine("請輸入秒數：");
+            if (int.TryParse(Console.ReadLine(), out sec) == false)
+            {
+                writeLog("格式錯誤 !!");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
             string mainExe = "Thunder".ToLower();
             string childExe = "ThunderPlatform".ToLower();
             string mainExePath = @"C:\Program Files (x86)\Thunder Network\Thunder\Program\Thunder.exe";
